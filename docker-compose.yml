@@ -1,13 +1,12 @@
 version: '3.8'
 
 services:
-
-  racecar:
+  arcturus:
     build: .
-    image: sebagarc/racecar2
+    image: toyat522/arcturus
     ports:
       - 6080:6080 # VNC
       - 11311:11311 # ROS master
     entrypoint: entrypoint.sh
     volumes:
-      - ./home:/home/racecar
+      - ./home:/home/arcturus

@@ -1,14 +1,11 @@
 #!/bin/bash
 
-
 # Set up debug
 mkdir -p $HOME/.log
 
-
 # Set up ROS
-mkdir -p $HOME/racecar_ws/src
-/bin/bash -c 'cd $HOME/racecar_ws; colcon build'
-/bin/bash -c 'mkdir -p $HOME/.rviz2; cp /tmp/default.rviz $HOME/.rviz2'
+mkdir -p $HOME/dev_ws/src
+mkdir -p $HOME/vrx_ws/src
 
 # Start the VNC server
 vncserver -SecurityTypes None -xstartup xstartup.sh > $HOME/.log/TigerVNC.log 2>&1
@@ -18,11 +15,11 @@ exec /noVNC-$NO_VNC_VERSION/utils/novnc_proxy --vnc 0.0.0.0:5901 --listen 0.0.0.
 
 # Welcome message
 printf "\n"
-printf "~~~~~Welcome to the racecar docker image!~~~~~"
+printf "~~~~~Welcome to the arcturus docker image!~~~~~"
 printf "\n\n"
 printf "To interface via a local terminal, open a new"
 printf "\n"  
-printf "terminal, cd into the racecar_docker directory"
+printf "terminal, cd into the arcturus_docker directory"
 printf "\n"
 printf "and run:"
 printf "\n\n"
