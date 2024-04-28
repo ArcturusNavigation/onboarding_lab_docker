@@ -1,7 +1,6 @@
-# Racecar Docker
+# Arcturus Docker
 
-This code defines a docker image to interface with the MIT Racecar.
-The image is built from a Debian base, includes the latest version of ROS, and the [racecar simulator](https://github.com/mit-racecar/racecar_simulator). It can be interfaced through a terminal or graphically through a browser.
+This code defines a docker image to interface with all_seaing_vehicle
 
 ## Installation
 
