@@ -88,11 +88,14 @@ ENV PYTHONIOENCODING=utf-8
 # Install additional required packages for ROS
 RUN apt update && apt install -y \
     ros-$ROS_DISTRO-tf2-geometry-msgs \
-    ros-$ROS_DISTRO-ackermann-msgs \
+    ros-$ROS_DISTRO-tf2-sensor-msgs \
     ros-$ROS_DISTRO-tf-transformations \
-    ros-$ROS_DISTRO-navigation2 \
-    ros-$ROS_DISTRO-xacro \
-    ros-$ROS_DISTRO-joy \
+    ros-$ROS_DISTRO-diagnostic-updater \
+    ros-$ROS_DISTRO-geographic-msgs \
+    ros-$ROS_DISTRO-mavros-msgs \
+    ros-$ROS_DISTRO-pcl-ros \
+    libgeographic-dev \
+    libyaml-cpp-dev \
     build-essential
 
 
@@ -106,13 +109,42 @@ RUN apt update && apt install -y \
     gedit \
     tmux \
     iputils-ping \
+    protobuf-compiler \
+    libb64-dev \
+    htop \
     feh
 
 
 # Install additional ros things
-RUN apt-get update && pip install transforms3d \
+RUN apt update && pip install transforms3d \
     pip install imutils \
     pip install opencv-contrib-python
+
+
+# Install Gazebo Garden
+RUN wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+RUN apt update && apt install -y \
+    gz-garden \
+    python3-sdformat13 \
+    ros-humble-ros-gzgarden \
+    ros-humble-xacro
+
+
+# Install MOOS-IvP
+RUN apt update && apt install -y \
+    subversion \
+    g++ \
+    cmake \
+    xterm \
+    libfltk1.3-dev \
+    freeglut3-dev \
+    libpng-dev \
+    libjpeg-dev \
+    libxft-dev \
+    libxinerama-dev \
+    libprotobuf-dev \
+    libtiff5-dev
 
 
 # Kill the bell!
