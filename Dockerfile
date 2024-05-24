@@ -131,22 +131,6 @@ RUN apt update && apt install -y \
     ros-humble-xacro
 
 
-# Install MOOS-IvP
-RUN apt update && apt install -y \
-    subversion \
-    g++ \
-    cmake \
-    xterm \
-    libfltk1.3-dev \
-    freeglut3-dev \
-    libpng-dev \
-    libjpeg-dev \
-    libxft-dev \
-    libxinerama-dev \
-    libprotobuf-dev \
-    libtiff5-dev
-
-
 # Kill the bell!
 RUN echo "set bell-style none" >> /etc/inputrc
 
