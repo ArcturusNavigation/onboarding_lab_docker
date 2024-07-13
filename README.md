@@ -1,6 +1,6 @@
-# Arcturus Dev
+# arcturus_dev
 
-This code defines a docker image to interface with all_seaing_vehicle
+This code defines the development environment of all_seaing_vehicle via docker.
 
 ## Installation
 
