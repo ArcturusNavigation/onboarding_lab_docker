@@ -1,4 +1,4 @@
-# Arcturus Docker
+# Arcturus Dev
 
 This code defines a docker image to interface with all_seaing_vehicle
 
@@ -13,14 +13,14 @@ First install `git` and Docker according to your OS:
 Once everything is installed and running, if you're on macOS or Linux open a terminal and if you're on Windows open a PowerShell. Then clone and pull the image):
 
     git clone https://github.com/ArcturusNavigation/arcturus_docker.git
-    cd arcturus_docker
+    cd arcturus_dev
     docker compose pull
 
 Linux users may need to use `sudo` to run `docker compose`. The image is about 1GB compressed so this can take a couple minutes. Fortunately, you only need to do it once.
 
 ## Starting Up
 
-Once the image is pulled you can start it by running the following in your `arcturus_docker` directory:
+Once the image is pulled you can start it by running the following in your `arcturus_dev` directory:
 
     docker compose up
 
@@ -39,7 +39,7 @@ If you try to rerun `docker compose up` without first running `docker compose do
 
 ## Local Storage
 
-Any changes made to the your home folder in the docker image (`/home/arcturus`) will be saved to the `arcturus_docker/home` directory your local machine but **ANY OTHER CHANGES WILL BE DELETED WHEN YOU RESTART THE DOCKER IMAGE**.
+Any changes made to the your home folder in the docker image (`/home/arcturus`) will be saved to the `arcturus_dev/home` directory your local machine but **ANY OTHER CHANGES WILL BE DELETED WHEN YOU RESTART THE DOCKER IMAGE**.
 
 ## Tips
 
