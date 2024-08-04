@@ -92,6 +92,11 @@ RUN apt update && apt install -y \
     htop
 
 
+# Install remaining dependencies
+RUN apt update && apt install -y \
+    libsdl1.2-dev
+
+
 # Install python packages
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt

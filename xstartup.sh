@@ -11,3 +11,4 @@ xset -b
 
 # Start the window manager
 openbox > $HOME/.log/openbox.log 2>&1
+
