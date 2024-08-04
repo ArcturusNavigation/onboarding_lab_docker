@@ -14,15 +14,12 @@ ARG DEBIAN_FRONTEND=noninteractive
 # Add the ROS deb repo to the apt sources list
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-		curl \
-		wget \
-		gnupg2 \
-		lsb-release \
-		ca-certificates \
-        console-setup \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get clean
-
+    curl \
+    wget \
+    gnupg2 \
+    lsb-release \
+    ca-certificates \
+    console-setup
 RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
 RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/ros2.list > /dev/null
 
@@ -33,15 +30,13 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     python3-setuptools 
 
- 
+
 # Install ros2 packages
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-		ros-${ROS_DISTRO}-desktop \
-		python3-colcon-common-extensions \
-        ros-dev-tools \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get clean
+    ros-${ROS_DISTRO}-desktop \
+    python3-colcon-common-extensions \
+    ros-dev-tools
 
 
 # Set up ROS2
@@ -85,7 +80,19 @@ ENV LANG=en_US.UTF-8
 ENV PYTHONIOENCODING=utf-8
 
 
-# Install additional required packages for ROS
+# Install utility programs
+RUN apt update && apt install -y \
+    sudo \
+    vim \
+    neovim \
+    emacs \
+    nano \
+    tmux \
+    iputils-ping \
+    htop
+
+
+# Install additional required packages
 RUN apt update && apt install -y \
     ros-$ROS_DISTRO-tf2-geometry-msgs \
     ros-$ROS_DISTRO-tf2-sensor-msgs \
@@ -96,29 +103,10 @@ RUN apt update && apt install -y \
     ros-$ROS_DISTRO-pcl-ros \
     libgeographic-dev \
     libyaml-cpp-dev \
+    libsdl1.2-dev \
     build-essential
-
-
-# Install some cool programs
-RUN apt update && apt install -y \
-    sudo \
-    vim \
-    neovim \
-    emacs \
-    nano \
-    gedit \
-    tmux \
-    iputils-ping \
-    protobuf-compiler \
-    libb64-dev \
-    htop \
-    feh
-
-
-# Install additional ros things
-RUN apt update && pip install transforms3d \
-    pip install imutils \
-    pip install opencv-contrib-python
+RUN apt update && pip install scipy \
+    pip install opencv-python
 
 
 # Install Gazebo Garden
@@ -127,8 +115,8 @@ RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/p
 RUN apt update && apt install -y \
     gz-garden \
     python3-sdformat13 \
-    ros-humble-ros-gzgarden \
-    ros-humble-xacro
+    ros-$ROS_DISTRO-ros-gzgarden \
+    ros-$ROS_DISTRO-xacro
 
 
 # Kill the bell!
