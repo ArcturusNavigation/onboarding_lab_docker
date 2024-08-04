@@ -24,14 +24,14 @@ RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o
 RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/ros2.list > /dev/null
 
 
-# Set up ROS
+# Set up Python
 RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
     python3-setuptools 
 
 
-# Install ros2 packages
+# Install ROS2 packages
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     ros-${ROS_DISTRO}-desktop \
@@ -39,7 +39,7 @@ RUN apt-get update && \
     ros-dev-tools
 
 
-# Set up ROS2
+# Initialize rosdep
 RUN rosdep init
 RUN rosdep update --include-eol-distros
 
@@ -92,21 +92,9 @@ RUN apt update && apt install -y \
     htop
 
 
-# Install additional required packages
-RUN apt update && apt install -y \
-    ros-$ROS_DISTRO-tf2-geometry-msgs \
-    ros-$ROS_DISTRO-tf2-sensor-msgs \
-    ros-$ROS_DISTRO-tf-transformations \
-    ros-$ROS_DISTRO-diagnostic-updater \
-    ros-$ROS_DISTRO-geographic-msgs \
-    ros-$ROS_DISTRO-mavros-msgs \
-    ros-$ROS_DISTRO-pcl-ros \
-    libgeographic-dev \
-    libyaml-cpp-dev \
-    libsdl1.2-dev \
-    build-essential
-RUN apt update && pip install scipy \
-    pip install opencv-python
+# Install python packages
+COPY ./requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt
 
 
 # Install Gazebo Garden
@@ -141,3 +129,4 @@ RUN echo 'arcturus:arcturus' | chpasswd
 RUN usermod -aG sudo arcturus
 USER arcturus
 WORKDIR /home/arcturus
+

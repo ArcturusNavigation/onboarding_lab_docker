@@ -10,3 +10,4 @@ services:
     entrypoint: entrypoint.sh
     volumes:
       - ./home:/home/arcturus
+
