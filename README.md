@@ -51,3 +51,5 @@ Any changes made to the your home folder in the docker image (`/home/arcturus`) 
 If you want to change the docker image and rebuild locally, all you need to do is add a `--build` flag:
 
     docker compose up --build
+
+## [Pre-build Images](https://hub.docker.com/repository/docker/toyat522/arcturus/general)
