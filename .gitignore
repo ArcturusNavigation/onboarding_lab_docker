@@ -1,3 +1,10 @@
+# Linux logs
+.Xauthority
+.bash_history
+.sudo_as_admin_successful
+.log/
+.vnc/
+
 # Project files
 .DS_Store
 .DS_Store?
@@ -44,3 +51,4 @@ bag/
 *~
 .\#*
 \#*\#
+
