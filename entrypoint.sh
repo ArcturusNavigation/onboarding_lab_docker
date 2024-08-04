@@ -3,10 +3,6 @@
 # Set up debug
 mkdir -p $HOME/.log
 
-# Set up ROS
-mkdir -p $HOME/dev_ws/src
-mkdir -p $HOME/vrx_ws/src
-
 # Start the VNC server
 vncserver -SecurityTypes None -xstartup xstartup.sh > $HOME/.log/TigerVNC.log 2>&1
 
