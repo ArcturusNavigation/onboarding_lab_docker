@@ -1,9 +1,12 @@
-# Linux logs
+# Linux
 .Xauthority
 .bash_history
 .sudo_as_admin_successful
 .log/
 .vnc/
+
+# ROS
+.ros/
 
 # Project files
 .DS_Store
