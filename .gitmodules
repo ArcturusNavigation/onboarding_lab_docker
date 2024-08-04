@@ -1,6 +1,7 @@
 [submodule "home/dev_ws/src/all_seaing_vehicle"]
 	path = home/dev_ws/src/all_seaing_vehicle
 	url = git@github.com:ArcturusNavigation/all_seaing_vehicle.git
+	branch = main
 [submodule "home/dev_ws/src/ros2-keyboard"]
 	path = home/dev_ws/src/ros2-keyboard
 	url = git@github.com:cmower/ros2-keyboard.git
