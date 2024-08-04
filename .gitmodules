@@ -1,0 +1,9 @@
+[submodule "home/dev_ws/src/all_seaing_vehicle"]
+	path = home/dev_ws/src/all_seaing_vehicle
+	url = git@github.com:ArcturusNavigation/all_seaing_vehicle.git
+[submodule "home/dev_ws/src/ros2-keyboard"]
+	path = home/dev_ws/src/ros2-keyboard
+	url = git@github.com:cmower/ros2-keyboard.git
+[submodule "home/dev_ws/src/robot_localization"]
+	path = home/dev_ws/src/robot_localization
+	url = git@github.com:cra-ros-pkg/robot_localization.git
