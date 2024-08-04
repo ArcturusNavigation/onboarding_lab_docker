@@ -52,4 +52,4 @@ If you want to change the docker image and rebuild locally, all you need to do i
 
     docker compose up --build
 
-## [Pre-build Images](https://hub.docker.com/repository/docker/toyat522/arcturus/general)
+## [Pre-built Images](https://hub.docker.com/repository/docker/toyat522/arcturus/general)
