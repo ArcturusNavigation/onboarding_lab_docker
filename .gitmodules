@@ -8,3 +8,6 @@
 [submodule "home/dev_ws/src/robot_localization"]
 	path = home/dev_ws/src/robot_localization
 	url = git@github.com:cra-ros-pkg/robot_localization.git
+[submodule "home/vrx_ws/src/vrx"]
+	path = home/vrx_ws/src/vrx
+	url = git@github.com:ArcturusNavigation/vrx.git
