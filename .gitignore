@@ -1,8 +1,9 @@
 # Linux
-.Xauthority
-.xsession-errors
 .bash_history
 .sudo_as_admin_successful
+.viminfo
+.Xauthority
+.xsession-errors
 .dbus/
 .log/
 .vnc/
