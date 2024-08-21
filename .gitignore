@@ -1,12 +1,15 @@
 # Linux
 .Xauthority
+.xsession-errors
 .bash_history
 .sudo_as_admin_successful
+.dbus/
 .log/
 .vnc/
 
 # ROS
 .ros/
+.rviz2/
 
 # Project files
 .DS_Store
