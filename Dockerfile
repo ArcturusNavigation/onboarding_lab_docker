@@ -138,5 +138,4 @@ RUN echo 'arcturus:arcturus' | chpasswd
 RUN usermod -aG sudo arcturus
 USER arcturus
 WORKDIR /home/arcturus
-ENV DISPLAY=:1
 
