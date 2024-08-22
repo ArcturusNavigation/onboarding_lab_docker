@@ -4,13 +4,17 @@
 .viminfo
 .Xauthority
 .xsession-errors
+.config/
 .dbus/
+.local/
 .log/
 .vnc/
 
 # ROS
+.gz/
 .ros/
 .rviz2/
+.sdformat/
 
 # Project files
 .DS_Store
