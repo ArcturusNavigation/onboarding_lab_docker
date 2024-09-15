@@ -63,3 +63,5 @@ bag/
 .\#*
 \#*\#
 
+# Workspace files
+home/ros2_ws/
