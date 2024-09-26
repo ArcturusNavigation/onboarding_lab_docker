@@ -1,5 +1,6 @@
 services:
   arcturus:
+    privileged: true
     build: .
     image: toyat522/arcturus:x86_64
     ports:
