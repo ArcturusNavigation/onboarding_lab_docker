@@ -91,9 +91,16 @@ RUN apt update && apt install -y \
     emacs \
     gedit \
     nano \
+    micro \
     tmux \
     iputils-ping \
     htop
+
+
+# Install fastfetch
+RUN apt update && apt-get install -y software-properties-common \
+	&& apt update && add-apt-repository -y ppa:zhangsongcui3371/fastfetch \
+	&& apt update && apt install -y fastfetch
 
 
 # Install remaining dependencies
