@@ -2,13 +2,6 @@
 	path = home/arcturus/dev_ws/src/all_seaing_vehicle
 	url = git@github.com:ArcturusNavigation/all_seaing_vehicle.git
 	branch = main
-[submodule "home/arcturus/dev_ws/src/robot_localization"]
-	path = home/arcturus/dev_ws/src/robot_localization
-	url = https://github.com/cra-ros-pkg/robot_localization.git
-	branch = humble-devel
-[submodule "home/arcturus/dev_ws/src/ros2-keyboard"]
-	path = home/arcturus/dev_ws/src/ros2-keyboard
-	url = https://github.com/cmower/ros2-keyboard.git
 [submodule "home/arcturus/vrx_ws/src/vrx"]
 	path = home/arcturus/vrx_ws/src/vrx
 	url = git@github.com:ArcturusNavigation/vrx.git
