@@ -1,9 +1,9 @@
-# arcturus\_docker
+# onboarding_lab_docker
 
 ## About
 
-arcturus_docker is the docker development environment for [all_seaing_vehicle](https://github.com/ArcturusNavigation/all_seaing_vehicle), the ROS 2 Autonomous Surface Vehicle (ASV) autonomy stack developed by the MIT Arcturus Autonomous Robotics Competition Team.
+onboarding_lab_docker is the docker development environment for [all_seaing_boat](https://github.com/ArcturusNavigation/all_seaing_boat), the Arcturus ROS 2 onboarding lab.
 
 ## Documentation
 
-Full documentation can be found [here](https://github.com/ArcturusNavigation/all_seaing_vehicle/wiki)
+Full documentation can be found [here](https://github.com/ArcturusNavigation/all_seaing_boat/wiki)

@@ -57,6 +57,7 @@ bag/
 .vscode
 .project
 .cproject
+.rclypyvenv
 
 # Emacs related
 *~
