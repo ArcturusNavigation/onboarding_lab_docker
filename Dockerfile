@@ -132,6 +132,10 @@ RUN echo "set bell-style none" >> /etc/inputrc
 COPY ./entrypoint.sh /usr/bin/entrypoint.sh
 COPY ./xstartup.sh /usr/bin/xstartup.sh
 
+# ensure unix line endings and exec bits
+RUN apt-get update && apt-get install -y dos2unix \
+    && dos2unix /usr/bin/entrypoint.sh /usr/bin/xstartup.sh \
+    && chmod +x /usr/bin/entrypoint.sh /usr/bin/xstartup.sh
 
 # Copy in default config files
 COPY ./config/bash.bashrc /etc/
