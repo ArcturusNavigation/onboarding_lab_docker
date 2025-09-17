@@ -3,6 +3,10 @@
 # Set up debug
 mkdir -p $HOME/.log
 
+# Kill any locks left behind by the previous VNC server
+rm -rf /tmp/.X11-unix/*
+rm -rf /tmp/.X*-lock
+
 # Start the VNC server
 vncserver -SecurityTypes None -xstartup xstartup.sh > $HOME/.log/TigerVNC.log 2>&1
 
